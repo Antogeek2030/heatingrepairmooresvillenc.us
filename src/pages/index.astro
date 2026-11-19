@@ -1,0 +1,118 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { services } from '../data/services';
+
+const title = 'Heating Repair Mooresville NC | Furnace & Heat Pump Service';
+const description = 'Professional furnace repair, heat pump service, and heating maintenance in Mooresville, NC and the Lake Norman area. Call for fast, reliable service.';
+const featured = services.slice(0, 6);
+const phone = '(704) 555-0176';
+const phoneLink = 'tel:+17045550176';
+---
+
+<BaseLayout title={title} description={description}>
+  <section class="hero">
+    <div class="container">
+      <h1>Heating Repair in Mooresville, NC</h1>
+      <p>
+        Furnace and heat pump repair, maintenance, and system replacements for homes around Mooresville and Lake Norman. Clear diagnosis, practical repairs, and honest advice.
+      </p>
+      <div class="hero-actions">
+        <a href={phoneLink} class="btn btn-primary">Call {phone}</a>
+        <a href="/contact/" class="btn btn-outline">Request Service</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <h2 class="section-title">Heating Services We Offer</h2>
+      <p class="section-subtitle">
+        From no-heat emergencies to seasonal tune-ups and full system replacements.
+      </p>
+      <div class="card-grid">
+        {featured.map((s) => (
+          <article class="card">
+            <h3><a href={`/services/${s.slug}/`}>{s.title}</a></h3>
+            <p>{s.shortDesc}</p>
+            <a href={`/services/${s.slug}/`} class="btn btn-outline" style="padding:0.5rem 1rem;font-size:0.9rem;">Learn more</a>
+          </article>
+        ))}
+      </div>
+      <p class="text-center" style="margin-top:2rem;">
+        <a href="/services/" class="btn btn-primary">View All Services</a>
+      </p>
+    </div>
+  </section>
+
+  <section class="section section-alt">
+    <div class="container">
+      <h2 class="section-title">Why Homeowners Call Us</h2>
+      <p class="section-subtitle">Straightforward service focused on restoring heat safely and efficiently.</p>
+      <div class="trust-grid">
+        <div class="trust-item">
+          <div class="icon" aria-hidden="true">🔧</div>
+          <h3>Thorough Diagnostics</h3>
+          <p>We identify the real cause so repairs last.</p>
+        </div>
+        <div class="trust-item">
+          <div class="icon" aria-hidden="true">🏠</div>
+          <h3>Local &amp; Responsive</h3>
+          <p>Based in Mooresville and familiar with local systems and climate.</p>
+        </div>
+        <div class="trust-item">
+          <div class="icon" aria-hidden="true">💬</div>
+          <h3>Clear Communication</h3>
+          <p>Plain-language explanations and upfront pricing before work begins.</p>
+        </div>
+        <div class="trust-item">
+          <div class="icon" aria-hidden="true">✅</div>
+          <h3>Safety Focused</h3>
+          <p>Combustion, venting, and electrical safety are part of every heating job.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <h2 class="section-title">What Customers Say</h2>
+      <p class="section-subtitle">Feedback from homeowners we have served in the Mooresville area.</p>
+      <div class="review-grid">
+        <div class="review-card">
+          <div class="stars" aria-label="5 stars">★★★★★</div>
+          <blockquote>
+            “Furnace went out on a cold night. They diagnosed a failed ignitor, replaced it the same visit, and heat was back quickly.”
+          </blockquote>
+          <cite>— Homeowner in Mooresville</cite>
+        </div>
+        <div class="review-card">
+          <div class="stars" aria-label="5 stars">★★★★★</div>
+          <blockquote>
+            “Honest about what needed fixing versus what could wait. Appreciate the clear explanation of our heat pump issue.”
+          </blockquote>
+          <cite>— Resident near Lake Norman</cite>
+        </div>
+        <div class="review-card">
+          <div class="stars" aria-label="5 stars">★★★★★</div>
+          <blockquote>
+            “Scheduled a tune-up before winter. Technician was thorough and left a written summary. System has been reliable so far.”
+          </blockquote>
+          <cite>— Customer in Davidson</cite>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section-alt">
+    <div class="container">
+      <div class="cta-banner">
+        <h2>Need Heating Help?</h2>
+        <p>Call for fast scheduling or send a message describing what is happening with your system.</p>
+        <div style="display:flex;flex-wrap:wrap;gap:1rem;justify-content:center;">
+          <a href={phoneLink} class="btn btn-primary" style="background:white;color:var(--color-secondary);">Call {phone}</a>
+          <a href="/contact/" class="btn btn-outline" style="border-color:white;color:white;">Contact Form</a>
+        </div>
+      </div>
+    </div>
+  </section>
+</BaseLayout>
